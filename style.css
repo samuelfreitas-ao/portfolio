@@ -2,26 +2,35 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  font-weight: 500;
+  line-height: 24px;
 }
 
 :root {
-  --text-color: white;
+  --text-color: #eee;
   --bg-url: url(./assets/bg-mobile.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./assets/moon-stars.svg);
+  --bg-gray: #777;
+  --bg-gray-100: rgba(255, 255, 255, 0.2);
+  --bg-gray-200: rgba(255, 255, 255, 0.3);
 }
 
 .light {
-  --text-color: black;
+  --text-color: #333;
   --bg-url: url(./assets/bg-mobile-light.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
   --switch-bg-url: url(./assets/sun.svg);
+  --bg-gray: #bbc;
+  --bg-gray-100: rgba(0, 0, 0, 0.1);
+  --bg-gray-200: none;
 }
 
 body {
@@ -34,39 +43,114 @@ body * {
   color: var(--text-color);
 }
 
-#container {
-  width: 100%;
-  max-width: 588px;
-  margin: 56px auto 0px;
-  padding: 0 24px;
+img {
+  max-width: 100%;
+  max-height: 100%;
 }
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin-bottom: 10px;
+  padding: 15px 0;
+  font-weight: normal;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+header .switch-option {
+  margin-left: auto;
+}
+
 
 /* profile */
 #profile {
   text-align: center;
-  padding: 24px;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 #profile img {
-  width: 112px;
+  width: 80px;
   border-radius: 100%;
+  border: #ccc 1px solid;
 }
 
-#profile p {
-  font-weight: 500;
-  line-height: 24px;
-  margin-top: 8px;
+#about {
+  /* margin-top: 20px; */
+}
+
+#about .about-box {
+  display: grid;
+  grid-template-columns: calc(60% - 30px) calc(40% - 10px);
+  gap: 30px
+}
+
+@media(max-width:768px) {
+  #about .about-box {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+  }
+}
+
+#about .about-box .content {
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  padding: 20px;
+  border-radius: 20px;
+  list-style: none;
+}
+
+#about .about-box .content ion-icon {
+  color: green;
+}
+
+#about .about-box .content>li {}
+
+#about .about-box .content>li .subcontent {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+}
+
+#about .about-box .content>li .subcontent li {
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#about .about-box .contact {
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
 }
 
 /* switch */
-#switch {
+#switch-theme {
   position: relative;
   width: 64px;
-
   margin: 4px auto;
 }
 
-#switch button {
+#switch-theme button {
   width: 32px;
   height: 32px;
   background: white var(--switch-bg-url) no-repeat center;
@@ -82,15 +166,15 @@ body * {
   animation: slide-back 0.2s;
 }
 
-.light #switch button {
+.light #switch-theme button {
   animation: slide-in 0.2s forwards;
 }
 
-#switch button:hover {
+#switch-theme button:hover {
   outline: 8px solid var(--highlight-color);
 }
 
-#switch span {
+#switch-theme span {
   display: block;
   width: 64px;
   height: 24px;
@@ -101,8 +185,28 @@ body * {
   border-radius: 9999px;
 }
 
+
+main {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+#container {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+
 /* links */
-ul {
+ul.ul {
   list-style: none;
 
   display: flex;
@@ -112,7 +216,7 @@ ul {
   padding: 24px 0;
 }
 
-ul li a {
+ul.ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,18 +237,104 @@ ul li a {
 }
 
 /* pseudo-selector */
-ul li a:hover {
+ul.ul li a:hover {
   background: var(--surface-color-hover);
   border: 1.5px solid var(--text-color);
 }
 
+main .project-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: calc(25% - 25px) calc(25% - 25px) calc(25% - 25px) calc(25% - 25px);
+  gap: 25px;
+}
+
+@media(max-width:991px) {
+  main .project-list {
+    grid-template-columns: calc(33.5% - 25px) calc(33.5% - 25px) calc(33.5% - 25px);
+  }
+}
+
+@media(max-width:767px) {
+  main .project-list {
+    grid-template-columns: calc(50% - 24px) calc(50% - 24px);
+  }
+}
+
+@media(max-width:575px) {
+  main .project-list {
+    grid-template-columns: calc(100% - 20px);
+  }
+}
+
+main .project-list>li {
+  background-color: var(--bg-gray-100);
+  border-radius: 10px;
+}
+
+main .project-list .img-box {
+  text-align: center;
+  background-color: var(--bg-gray-200);
+  border-radius: 10px 10px 0 0;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+main .project-list img {
+  width: 100%;
+}
+
+main .project-list .content-box {
+  padding: 5px;
+}
+
+main .project-list li ul.techs {
+  list-style: none;
+}
+
+main .project-list .techs li {
+  display: inline-block;
+  font-size: 11px;
+  background-color: var(--bg-gray);
+  padding: 0 5px;
+  border-radius: 5px;
+}
+
+main .project-list li .date {
+  /* margin: 10px 0; */
+  font-size: 12px;
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+footer {
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 14px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+@media(max-width:575px) {
+  footer {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .copyright {
+    order: 2;
+  }
+}
+
 /* social links */
 #social-links {
+  /* margin-left: auto; */
   display: flex;
   justify-content: center;
-
-  padding: 24px 0;
-
   font-size: 24px;
 }
 
@@ -152,7 +342,7 @@ ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 8px;
 
   transition: background 0.2s;
   border-radius: 50%;
@@ -160,12 +350,6 @@ ul li a:hover {
 
 #social-links a:hover {
   background: var(--highlight-color);
-}
-
-footer {
-  padding: 24px 0;
-  text-align: center;
-  font-size: 14px;
 }
 
 /* media queries */
