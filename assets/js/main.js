@@ -67,15 +67,15 @@ class SkillService {
   static skillList() {
     return {
       languages: [
-        { name: 'PHP', level: 4 },
         { name: 'JavaScript', level: 3 },
         { name: 'HTML', level: 4 },
         { name: 'CSS', level: 3 },
-        { name: 'Java SE', level: 2 },
-        { name: 'Laravel', level: 3 },
         { name: 'ReactJs', level: 3 },
-        { name: 'Nodejs', level: 3 },
         { name: 'ReactNative', level: 2 },
+        { name: 'Laravel', level: 3 },
+        { name: 'PHP', level: 4 },
+        { name: 'Java SE', level: 2 },
+        { name: 'Nodejs', level: 3 },
         { name: 'NextJs', level: 3 },
         { name: 'TypeScript', level: 4 },
         { name: 'RxJs', level: 2 },
