@@ -132,23 +132,23 @@ class SkillService {
 
     let skillListEl = `
       <div class="skill-title">Bom domínio de linguagens de programação, frameworks e template engines</div>
-        <div class="skill-list">
+        <ul class="skill-list">
     `
     for (const skill of languages) {
       skillListEl += SkillService.getSkill(skill.name, skill.level)
     }
-    //Close div.skill-list
-    skillListEl += `</div>`
+    //Close ul.skill-list
+    skillListEl += `</ul>`
 
     skillListEl += `
       <div class="skill-title">Base de dados</div>
-        <div class="skill-list">
+        <ul class="skill-list">
     `
     for (const skill of databases) {
       skillListEl += SkillService.getSkill(skill.name, skill.level)
     }
-    //Close div.skill-list
-    skillListEl += `</div>`
+    //Close ul.skill-list
+    skillListEl += `</ul>`
 
     mainContentEl.querySelector('.skill-container').innerHTML = skillListEl
   }
