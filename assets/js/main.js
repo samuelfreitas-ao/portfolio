@@ -130,27 +130,27 @@ class SkillService {
   static render() {
     const { languages, databases } = this.skillList()
 
-    let skillsEl = `
+    let skillListEl = `
       <div class="skill-title">Bom domínio de linguagens de programação, frameworks e template engines</div>
         <div class="skill-list">
     `
     for (const skill of languages) {
-      skillsEl += SkillService.getSkill(skill.name, skill.level)
+      skillListEl += SkillService.getSkill(skill.name, skill.level)
     }
     //Close div.skill-list
-    skillsEl += `</div>`
+    skillListEl += `</div>`
 
-    skillsEl += `
+    skillListEl += `
       <div class="skill-title">Base de dados</div>
         <div class="skill-list">
     `
     for (const skill of databases) {
-      skillsEl += SkillService.getSkill(skill.name, skill.level)
+      skillListEl += SkillService.getSkill(skill.name, skill.level)
     }
     //Close div.skill-list
-    skillsEl += `</div>`
+    skillListEl += `</div>`
 
-    mainContentEl.querySelector('.skill-container').innerHTML = skillsEl
+    mainContentEl.querySelector('.skill-container').innerHTML = skillListEl
   }
 
   /**
