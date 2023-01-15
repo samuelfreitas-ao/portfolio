@@ -9,7 +9,7 @@
 
 :root {
   --text-color: #eee;
-  --bg-url: url(../images/bg-mobile.jpg);
+  --bg-url: linear-gradient(to bottom right, #000, rgba(8, 2, 34, 0.8), #000); 
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
@@ -22,7 +22,7 @@
 
 .light {
   --text-color: #333;
-  --bg-url: url(../images/bg-mobile-light.jpg);
+  --bg-url: linear-gradient(to top right,rgba(13, 19, 73, 0.3), #fff, rgba(5, 13, 251, 0.3));
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
@@ -34,8 +34,8 @@
 }
 
 body {
-  background: var(--bg-url) no-repeat top center/cover;
   height: 100vh;
+  background: var(--bg-url)
 }
 
 body * {
@@ -68,7 +68,6 @@ header {
 header .switch-option {
   margin-left: auto;
 }
-
 
 /* profile */
 #profile {
@@ -185,7 +184,6 @@ header .switch-option {
   border-radius: 9999px;
 }
 
-
 main {
   overflow-y: auto;
   display: flex;
@@ -203,7 +201,6 @@ main {
   justify-content: space-between;
   height: 100vh;
 }
-
 
 /* links */
 ul.ul {
@@ -349,17 +346,6 @@ footer {
 
 #social-links a:hover {
   background: var(--highlight-color);
-}
-
-/* media queries */
-@media (min-width: 700px) {
-  :root {
-    --bg-url: url(../images/bg-desktop.jpg);
-  }
-
-  .light {
-    --bg-url: url(../images/bg-desktop-light.jpg);
-  }
 }
 
 /* animation */
