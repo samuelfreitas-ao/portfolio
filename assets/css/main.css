@@ -9,7 +9,7 @@
 
 :root {
   --text-color: #eee;
-  --bg-url: linear-gradient(to bottom right, #000, rgba(8, 2, 34, 0.8), #000);
+  --bg-primary: linear-gradient(to bottom right, #000, rgba(8, 2, 34, 0.8), #000);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
@@ -23,7 +23,7 @@
 
 .light {
   --text-color: #333;
-  --bg-url: linear-gradient(to top right, rgba(13, 19, 73, 0.3), #fff, rgba(5, 13, 251, 0.3));
+  --bg-primary: linear-gradient(to top right, rgba(13, 19, 73, 0.3), #fff, rgba(5, 13, 251, 0.3));
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
@@ -35,9 +35,27 @@
   --bg-blue-200: rgb(2 132 199);
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  display: none;
+}
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+} */
+
+/* Handle */
+/* ::-webkit-scrollbar-thumb {
+  background: var(--stroke-color);
+  border-radius: 10px;
+} */
+
 body {
   height: 100vh;
-  background: var(--bg-url)
+  background: var(--bg-primary)
 }
 
 body * {
