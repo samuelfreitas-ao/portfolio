@@ -9,7 +9,7 @@
 
 :root {
   --text-color: #eee;
-  --bg-url: linear-gradient(to bottom right, #000, rgba(8, 2, 34, 0.8), #000); 
+  --bg-url: linear-gradient(to bottom right, #000, rgba(8, 2, 34, 0.8), #000);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
@@ -18,11 +18,12 @@
   --bg-gray: #777;
   --bg-gray-100: rgba(255, 255, 255, 0.2);
   --bg-gray-200: rgba(255, 255, 255, 0.3);
+  --bg-blue-200: rgb(6 182 212);
 }
 
 .light {
   --text-color: #333;
-  --bg-url: linear-gradient(to top right,rgba(13, 19, 73, 0.3), #fff, rgba(5, 13, 251, 0.3));
+  --bg-url: linear-gradient(to top right, rgba(13, 19, 73, 0.3), #fff, rgba(5, 13, 251, 0.3));
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
@@ -30,7 +31,8 @@
   --switch-bg-url: url(../images/sun.svg);
   --bg-gray: #bbc;
   --bg-gray-100: rgba(0, 0, 0, 0.1);
-  --bg-gray-200: none;
+  --bg-gray-200: rgba(0, 0, 0, 0.2);
+  --bg-blue-200: rgb(2 132 199);
 }
 
 body {
@@ -69,6 +71,12 @@ header .switch-option {
   margin-left: auto;
 }
 
+ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;;
+}
+
 /* profile */
 #profile {
   text-align: center;
@@ -90,7 +98,7 @@ header .switch-option {
 
 #about .about-box {
   display: grid;
-  grid-template-columns: calc(60% - 30px) calc(40% - 10px);
+  grid-template-columns: calc(60% - 30px) calc(40%);
   gap: 30px
 }
 
@@ -202,6 +210,51 @@ main {
   height: 100vh;
 }
 
+.skill-container .skill-title {
+  font-weight: bold;
+  border-bottom: 1px solid var(--stroke-color);
+  padding-bottom: 5px;
+  margin: 15px 0 10px 0;
+  text-transform: uppercase;
+}
+
+.skill-container .skill-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 20px
+}
+
+.skill-container .skill-list .skill-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  background-color: rgba(13, 1, 1, 0.2);
+  padding: 10px;
+}
+
+.skill-container .skill-list .skill-box .skill-level-list {
+  margin-left: auto;
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.skill-container .skill-list .skill-box .skill-level-list .skill-level-box {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background-color: var(--bg-gray-200);
+  border-radius: 0;
+}
+
+.skill-container .skill-list .skill-box:hover .skill-level-list .skill-level-box {
+  border-radius: 100%;
+}
+
+.skill-container .skill-list .skill-box .skill-level-list .skill-level-box.active {
+  background-color: var(--bg-blue-200);
+}
+
 /* links */
 ul.ul {
   list-style: none;
@@ -243,26 +296,35 @@ main .project-list {
   list-style: none;
   padding: 0;
   display: grid;
-  grid-template-columns: calc(25% - 25px) calc(25% - 25px) calc(25% - 25px) calc(25% - 25px);
+  grid-template-columns: repeat(4, 1fr);
   gap: 25px;
 }
 
 @media(max-width:991px) {
   main .project-list {
-    grid-template-columns: calc(33.5% - 25px) calc(33.5% - 25px) calc(33.5% - 25px);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .skill-container .skill-list {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media(max-width:767px) {
   main .project-list {
-    grid-template-columns: calc(50% - 24px) calc(50% - 24px);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media(max-width:575px) {
   main .project-list {
-    grid-template-columns: calc(100% - 20px);
+    grid-template-columns: 100%;
   }
+
+  .skill-container .skill-list {
+    grid-template-columns: 100%;
+  }
+
 }
 
 main .project-list>li {
