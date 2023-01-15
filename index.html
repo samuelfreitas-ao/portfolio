@@ -2,10 +2,6 @@
 <html lang="pt-br">
 
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
-
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -55,8 +51,8 @@
   <div id="container">
     <header>
       <div id="profile">
-        <img src="./assets/images/avatar.jpg" alt="Foto de Samuel Freitas" />
-        <h1>Samuel Freitas</h1>
+        <img src="./assets/images/avatar.jpg" alt="Foto de Samuel Freitas - Portfólio" />
+        <h1 title="Samuel Freitas - Portfólio">Samuel Freitas</h1>
       </div>
       <div class="switch-option">
         <div id="switch-theme" title="Alternar entre modo light e dark">
@@ -68,7 +64,7 @@
 
     <main>
       <div id="about">
-        <!-- <h2>Sobre Samuel</h2> -->
+        <!-- <h2 class="subtitle">Sobre Samuel</h2> -->
         <div class="about-box">
           <ul class="content">
             <li>
@@ -95,9 +91,9 @@
           </ul>
           <div class="contact">
             <h2 style="text-align: left;">Contacto</h2>
-            <div>
+            <div style="display: flex; gap: 2px; align-items: center;">
               <ion-icon name="mail-outline"></ion-icon>
-              samuelfreitas.ao@gmail.com
+              <a href="mailto:samuelfreitas.ao@gmail.com" style="text-decoration: none;">samuelfreitas.ao@gmail.com</a>
             </div>
             <div id="social-links" style="margin-left: 0;">
               <a href="//wa.me/message/BEZBIUEUNXEZH1" target="_blank">
@@ -118,19 +114,19 @@
       </div>
 
       <div id="skills">
-        <h2>Skills</h2>
-        <ul class="skill-container"></ul>
+        <h2 class="subtitle">Skills</h2>
+        <div class="skill-container"></div>
       </div>
 
       <div id="projects">
-        <h2>Projectos</h2>
+        <h2 class="subtitle">Projectos</h2>
         <p style="text-align: center; padding-bottom: 10px;">
           Tenho a paixão de transformar ideias em soluções
         </p>
         <ul class="project-list">
           <li>
             <div class="img-box">
-              <img src="./assets/images/projects/pixel_builder.png" alt="">
+              <img src="./assets/images/projects/pixel_builder.png" alt="Porjecto - Pixel Builder">
             </div>
             <div class="content-box">
               <ul class="techs">
@@ -150,7 +146,7 @@
           </li>
           <li>
             <div class="img-box">
-              <img src="./assets/images/projects/at_share.svg" alt="">
+              <img src="./assets/images/projects/at_share.svg" alt="Projecto - AT Share">
             </div>
             <div class="content-box">
               <ul class="techs">
@@ -170,7 +166,7 @@
           </li>
           <li>
             <div class="img-box">
-              <img src="./assets/images/projects/at_storage.png" alt="">
+              <img src="./assets/images/projects/at_storage.png" alt="Projecto - AT Storage">
             </div>
             <div class="content-box">
               <ul class="techs">
@@ -190,7 +186,7 @@
           </li>
           <li>
             <div class="img-box">
-              <img src="./assets/images/projects/kepya.png" alt="">
+              <img src="./assets/images/projects/kepya.png" alt="Projecto - Kepya">
             </div>
             <div class="content-box">
               <ul class="techs">
@@ -211,7 +207,7 @@
           </li>
           <li>
             <div class="img-box">
-              <img src="./assets/images/projects/mwangosoft.png" alt="">
+              <img src="./assets/images/projects/mwangosoft.png" alt="Projecto - Mwangosoft">
             </div>
             <div class="content-box">
               <ul class="techs">
@@ -244,11 +240,24 @@
         </ul>
       </div>
 
-      <!-- <div id="experience">
-        <h2>Experiência profissional</h2>
+      <div id="professional-info">
+        <h2 class="subtitle">Experiência profissional</h2>
+        <div class="professional-info-container"></div>
+      </div>
 
-        <ul class="experience-list" style="display: flex;flex-direction: column; gap: 10px"></ul>
-      </div> -->
+      <div>
+        <p>
+          Chegou ao fim. ;-)
+        </p>
+        <div>
+          Quer conversar? Estou esperando você no 
+          <ul class="ul" style=" display: inline-block;">
+            <li>
+              <a href="//wa.me/message/BEZBIUEUNXEZH1" target="_blank"> whatsApp &nbsp; <ion-icon name="logo-whatsapp"></ion-icon></a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
     </main>
 
@@ -278,6 +287,8 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+  <script src="./assets/js/services/data.js"></script>
+  <script src="./assets/js/utils.js"></script>
   <script src="./assets/js/main.js"></script>
 </body>
 

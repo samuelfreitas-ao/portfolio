@@ -175,3 +175,90 @@ class SkillService {
 }
 
 SkillService.render()
+
+/* Professional info */
+class ProfessionalInfoService {
+  /**
+   *
+   * @param {CompanyType} company
+   */
+  static getCompanyExperiences(company) {
+    let companyInfo = `
+      <div class="sub-items">
+        <div class="sections">
+          <div class="time">
+            <ion-icon name="time-outline"></ion-icon>
+            <span>
+              ${DateUtils.getShortMonth(company.start_month)} de 
+              ${company.start_year}
+            </span> - 
+            <span>
+              ${DateUtils.getShortMonth(company.end_month)} de 
+              ${company.end_year}
+            </span>
+          </div> 
+          <div class="occupation">${company.occupation}</div>
+        </div>
+        <div class="sections">
+          <div>Sector de actividade</div>
+          <div class="activity-section">
+            ${company.activity_section}
+          </div>
+        </div> 
+        <div class="sections">
+          <div>Responsabilidades</div>
+          <div class="responsability-items">${company.description}</div>
+        </div> 
+        <div>
+          Tecnologias:
+          ${this.getTechs(company.techs)}
+        </div>
+      </div> 
+    `
+    return companyInfo
+  }
+
+  /**
+   *
+   * @param {string[]} techs
+   */
+  static getTechs(techs) {
+    let skillsEl = ``
+    for (const tech of techs) {
+      skillsEl += `
+        <li>${tech}</li>
+      `
+    }
+    return `<ul class="company-skill-list">${skillsEl}</ul>` 
+  }
+
+  static render() {
+    let professionalInfoList = ``
+    for (const experience of getProfessionalInfos()) {
+      professionalInfoList += `
+        <div class="experience-box">
+          <div class="header">
+            <div class="company-name">
+              ${experience.company}
+            </div>
+            <div class="company-address">
+              <ion-icon name="location-outline"></ion-icon> ${experience.address}
+            </div>
+          </div>
+          <div class="items">
+      `
+      for (const company of experience.experiencies) {
+        professionalInfoList += this.getCompanyExperiences(company)
+      }
+      professionalInfoList += `     
+          </div>
+        </div>
+       `
+    }
+    mainContentEl.querySelector(
+      '.professional-info-container'
+    ).innerHTML = `<div class="experience-list">${professionalInfoList}</div>`
+  }
+}
+
+ProfessionalInfoService.render()
