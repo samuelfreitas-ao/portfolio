@@ -31,4 +31,4 @@ O projecto final momento está num repositório privado e desenvolvido com as se
 
 <p>Este portfólio pode ser acessado a partir do link abaixo:</p>
 
-- [Acesse o Portfolio](https://samuelfreitas-ao.github.io/portfolio)
+- [Acesse o Portfolio](https://samuelfreitas.vercel.app/)
