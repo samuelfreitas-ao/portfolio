@@ -8,7 +8,7 @@
   "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
-  "files.autoSave": "afterDelay",
+  // "files.autoSave": "afterDelay",
 
   // explorer
   "explorer.compactFolders": false,

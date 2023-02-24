@@ -15,13 +15,19 @@
 
 ## 🚀 Tecnologias
 
-Esse projecto foi desenvolvido com as seguintes tecnologias:
+Esse projecto foi desenvolvido inicialmente com as seguintes tecnologias:
 
 - HTML e CSS
 - JavaScript
-- Git e Github
+- Git
+- Github (hospedagem)
 
-## 💻 Projecto
+E está num repositório público e só serve de redirecionemento para o projecto final.
+
+O projecto final momento está num repositório privado e desenvolvido com as seguintes tecnologias:
+
+- [Nextjs](https://nextjs.org)
+- Vercel (Hospedagem)
 
 <p>Este portfólio pode ser acessado a partir do link abaixo:</p>
 
