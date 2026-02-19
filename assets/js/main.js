@@ -1,1 +1,1 @@
-location.href = 'https://samuelfreitas.vercel.app'
+location.replace('https://samuelfreitas.vercel.app')
